@@ -1,3 +1,7 @@
+
+// modules use require;
+const { v4: uuidv4 } = require('uuid');
+
 const quotes = [
   {
     quote: 'We build our computer (systems) the way we build our cities: over time, without a plan, on top of ruins.',
@@ -52,6 +56,11 @@ const quotes = [
     person: 'Jon von Neumann'
   },
 ];
+
+quotes.forEach(quote => {
+  quote.id = uuidv4();
+})
+
 
 module.exports = {
   quotes
