@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const loginRouter = express.Router();
 
 
@@ -34,6 +34,6 @@ const mockUser = [
     }
 ]
 
-module.exports = {
+export {
     loginRouter
-};
+}

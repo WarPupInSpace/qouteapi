@@ -1,17 +1,19 @@
-const express = require('express');
-const app = express();
-const QuoteRouter = express.Router();
-const { v4: uuidv4 } = require('uuid');
-const morgan  = require('morgan');
-const cors = require('cors');
-const session = require('express-session');
-const { OPT_SESSION } = require('./types/session.js');
-const {loginRouter} = require('./routes/login.js');
-const logger = require('dev-logger');
-const { authorizedUser } = require('./utils/middleware/authorize.js')
+import express, {
+    Router
+} from'express';
+import { v4 as uuidv4 } from 'uuid';
+import morgan  from'morgan';
+import cors from'cors';
+import session from'express-session';
+import { OPT_SESSION } from'./types/session.js';
+import {loginRouter} from'./routes/login.js';
+import logger from'dev-logger';
+import { authorizedUser } from'./utils/middleware/authorize.js';
+import { quotes } from'./data.js';
+import { getRandomElement } from'./utils.js';
 
-var { quotes } = require('./data');
-const { getRandomElement } = require('./utils.js');
+const app = express();
+const QuoteRouter = Router();
 
 const PORT = process.env.PORT || 4001;
 

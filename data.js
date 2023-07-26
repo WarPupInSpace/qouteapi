@@ -1,6 +1,6 @@
 
 // modules use require;
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 const quotes = [
   {
@@ -61,7 +61,6 @@ quotes.forEach(quote => {
   quote.id = uuidv4();
 })
 
-
-module.exports = {
+export {
   quotes
-};
+}

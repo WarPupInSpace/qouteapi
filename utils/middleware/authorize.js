@@ -8,6 +8,6 @@ const authorizedUser = (req, res, next) => {
     }
   }
 
-  module.exports = {
-    authorizedUser,
-  }
+export {
+    authorizedUser
+}

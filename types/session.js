@@ -1,6 +1,7 @@
-require('dot-env');
-const session = require('express-session');
+import 'dot-env';
+import session from 'express-session';
 const store = new session.MemoryStore();
+
 
 const OPT_SESSION = {
     secret: "toBeReplaced",
@@ -14,6 +15,6 @@ const OPT_SESSION = {
     store,
 }
 
-module.exports = {
-    OPT_SESSION,
+export {
+    OPT_SESSION
 }
